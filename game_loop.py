@@ -15,12 +15,12 @@ class Player(object):
     """Class for holding player information"""
 
     def __init__(self):
-        self.max_health = 10 + G.PERMANENT_POWER_UPS["higher_max_health"]
+        self.max_health = 15 + G.PERMANENT_POWER_UPS["higher_max_health"]
         self.health = self.max_health
-        self.max_ammo = 10 + G.PERMANENT_POWER_UPS["higher_max_ammo"]
+        self.max_ammo = 15 + G.PERMANENT_POWER_UPS["higher_max_ammo"]
         self.ammo = self.max_ammo
         self.score = 0
-        self.reload_duration = 2.5
+        self.reload_duration = 1.5
         self.reload_start_time = 0
         self.piercing_rounds = False
         self.piercing_rounds_start_time = 0
@@ -249,7 +249,7 @@ def game_loop():
         pygame.display.update()
 
         # Store time since last tick in seconds
-        delta_t = G.CLOCK.tick(60) / 1000
+        delta_t = G.CLOCK.tick(float(60)) / float(1000)
 
         if not missiles_to_spawn and not missile_list:
             G.DIFFICULTY += 1

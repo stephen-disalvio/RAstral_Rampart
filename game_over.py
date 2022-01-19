@@ -38,7 +38,7 @@ def game_over():
     pygame.mixer.music.pause()
 
     game_over_surf_1, game_over_rect_1 = text_objects(
-        "GAME OVER",
+        "Try again!",
         G.GIANT_TEXT,
         G.RED,
         (G.DISPLAY_WIDTH * 0.5, G.DISPLAY_HEIGHT * 0.25),

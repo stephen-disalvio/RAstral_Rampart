@@ -1420,4 +1420,10 @@ NAMES = [
     "The Stalwart War Hero",
     "Prince Pilot",
     "The Uncomprimising Major",
+    "Luke Skywalker",
+    "The Dude",
+    "Django Fett",
+    "Bill Burr",
+    "Dog the Bounty Hunter",
+    "The Terminator",
 ]

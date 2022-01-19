@@ -8,10 +8,20 @@ import global_variables as G
 class Missile(pygame.sprite.Sprite):
     """These missiles rain from the sky to attack the player"""
 
+    m1_speed = 3
+    m2_speed = 4
+    m3_speed = 6
+    m1_dmg = -5
+    m2_dmg = -3
+    m3_dmg = -1
+    m1_pts = 3
+    m2_pts = 2
+    m3_pts = 1
+    
     missile_stats = [
-        {"speed": 3, "damage": -5, "points": 3},
-        {"speed": 4, "damage": -3, "points": 2},
-        {"speed": 6, "damage": -1, "points": 1},
+        {"speed": m1_speed, "damage": m1_dmg, "points": m1_pts},
+        {"speed": m2_speed, "damage": m2_dmg, "points": m2_pts},
+        {"speed": m3_speed, "damage": m3_dmg, "points": m3_pts},
     ]
 
     def __init__(self, pos, missile_type):
@@ -145,16 +155,17 @@ class Gun(pygame.sprite.Sprite):
 
     def update(self):
         """Rotate the gun"""
+        max_angle = 90
 
-        if self.angle >= 70:
+        if self.angle >= max_angle:
             self.turning_left = False
-        elif self.angle <= -70:
+        elif self.angle <= -max_angle:
             self.turning_left = True
 
         if self.turning_left:
-            self.angle += 2
+            self.angle += 4
         else:
-            self.angle -= 2
+            self.angle -= 4
 
         self.image = pygame.transform.rotate(self.original_image, self.angle)
         self.rect = self.image.get_rect(center=self.rect.center)
